@@ -1,0 +1,39 @@
+hmv-world-website/
+│
+├── index.html           <-- MUST be in the root folder
+├── about.html
+├── contact.html
+├── products.html
+├── quotation.html
+├── script.js            <-- Your main Javascript file
+├── style.css            <-- Your main CSS file
+├── CNAME                <-- Contains: www.hmvworld.com
+│
+└── assets/              <-- All images go here
+	│
+    ├── favicon/
+	│   └── favicon.webp
+	│
+    ├── logo/
+    │   ├── logo.webp
+    │   └── mouse cursor.webp
+    │
+    ├── hero/
+    │   ├── hero-slide1.webp
+    │   ├── hero-slide2.webp
+    │   └── ...
+    │
+    ├── pages/
+    │   ├── About Us.webp
+    │   ├── Contact Us.webp
+    │   ├── Products.webp
+    │   └── Quotation.webp
+    │
+    ├── products/
+    │   ├── black-pepper.webp
+    │   ├── turmeric.webp
+    │   └── ... (all product images)
+    │
+    └── partners/
+        ├── fssai.webp
+        └── ...

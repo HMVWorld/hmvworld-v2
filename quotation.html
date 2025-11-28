@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Quote | HMV World</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data:; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; connect-src 'self' https://api.emailjs.com https://ipapi.co;">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+ <div id="app-header"></div>
+
+    <div class="page-hero">...</div>
+ 
+
+
+	
+	
+
+    <div class="page-hero">
+        <img src="assets/pages/Quotation.webp" alt="Request Quotation">
+    </div>
+
+    <section id="quotation" class="quotation-section section" style="padding-top:0;">
+        <div class="container">
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto;">Fill out the form below with your exact requirements.</p>
+            
+            <form id="quotation-form" class="quotation-form">
+                <div class="quotation-form-grid">
+                    <div class="form-group span-half">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first_name" required />
+                    </div>
+                    <div class="form-group span-half">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last_name" required />
+                    </div>
+
+                    <div class="form-group span-half">
+                        <label for="company-name">Company Name</label>
+                        <input type="text" id="company-name" name="company_name" />
+                    </div>
+                    <div class="form-group span-half">
+                        <label for="website">Website (Optional)</label>
+                        <input type="text" id="website" name="website" placeholder="e.g. hmvworld.com" />
+                    </div>
+
+                    <div class="form-group span-half">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div class="form-group span-half form-group-contact">
+                        <label for="contact-number">Phone Number</label>
+                        <div class="contact-inputs">
+                            <select id="country-code" name="country_code">
+                                <option value="+91">+91 (IND)</option>
+                                <option value="+1">+1 (USA)</option>
+                                <option value="+44">+44 (UK)</option>
+                                <option value="+971">+971 (UAE)</option>
+                                <option value="">Other</option>
+                            </select>
+                            <input type="tel" id="contact-number" name="contact_number" required />
+                        </div>
+                    </div>
+                    
+                    <div class="form-group span-half">
+                        <label for="product-req">Product Category</label>
+                        <select id="product-req" name="product_req" required>
+                            <option value="" disabled selected>Select a Category</option>
+                            <option value="Spices">Spices</option>
+                            <option value="Pulses">Pulses</option>
+                            <option value="Grains & Cereal">Grains & Cereal</option>
+                            <option value="Dry Fruits">Dry Fruits</option>
+                            <option value="Dehydrated Products">Dehydrated Products</option>
+                            <option value="Fresh Fruits">Fresh Fruits</option>
+                            <option value="Fresh Vegetables">Fresh Vegetables</option>
+                            <option value="Herbs">Herbs</option>
+                            <option value="Flours">Flours</option>
+                            <option value="Oilseeds">Oilseeds</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group span-half">
+                        <label for="product-type">Specific Variety</label>
+                        <select id="product-type" name="product_type" required>
+                            <option value="" disabled selected>Select Category First</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group span-half">
+                        <label for="hs-code-input">HS Code (Auto-filled)</label>
+                        <input type="text" id="hs-code-input" name="hs_code" readonly style="background-color: #e9ecef; cursor: not-allowed;" />
+                    </div>
+                    <div class="form-group span-half">
+                        <label for="description-input">Description (Auto-filled)</label>
+                        <input type="text" id="description-input" name="dgft_description" readonly style="background-color: #e9ecef; cursor: not-allowed;" />
+                    </div>
+
+                    <div class="form-group span-full">
+                        <label for="exact-req">Exact Requirement</label>
+                        <textarea id="exact-req" name="exact_req" rows="4" required></textarea>
+                        <div style="text-align: right; font-size: 0.85rem; margin-top: 5px;">
+                            <span class="word-limit-counter" style="color: #555;">200 words remaining</span>
+                        </div>
+                    </div>
+
+                    <div class="form-button span-full">
+                        <button type="submit" class="btn btn-primary" id="quotation-submit-btn">SEND REQUEST</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div id="popup-message" class="popup-overlay" style="display: none;">
+        <div class="popup-box">
+            <h3>Request Sent Successfully!</h3>
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.12.1/dist/email.min.js"></script>
+	
+	    <div id="app-footer"></div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
