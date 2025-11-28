@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             category: "Spices", icon: "fas fa-leaf", 
             subProducts: [
-                { name: "Black Pepper", image: "assets/products/black-pepper.webp", specs: "GL 500/550, Moisture <12%", ingredients: "Piper nigrum", uses: ["Seasoning", "Preservative"], hsCode: "0904.11.10", dgftDesc: "Black Pepper, ungarbled" },
+                { name: "Black Pepper", image: "assets/products/Black-Pepper.webp", specs: "GL 500/550, Moisture <12%", ingredients: "Piper nigrum", uses: ["Seasoning", "Preservative"], hsCode: "0904.11.10", dgftDesc: "Black Pepper, ungarbled" },
                 { name: "Turmeric", image: "assets/products/turmeric.webp", specs: "Dried Whole/Split, Powder", ingredients: "Curcuma longa", uses: ["Food coloring", "Antiseptic"], hsCode: "0910.30.20", dgftDesc: "Turmeric in Powder" },
                 { name: "Ginger", image: "assets/products/ginger.webp", specs: "Dried Whole/Split, Powder", ingredients: "Zingiber officinale", uses: ["Tea", "Culinary"], hsCode: "0910.11.20", dgftDesc: "Ginger, other than fresh" },
                 { name: "Star Anise", image: "assets/products/star-anise.webp", specs: "Whole/Broken", ingredients: "Illicium verum", uses: ["Spices", "Medicinal oil"], hsCode: "0908.31.20", dgftDesc: "Anise seeds, crushed" },
@@ -412,3 +412,4 @@ document.addEventListener('keydown', e => {
         return false;
     }
 });
+
