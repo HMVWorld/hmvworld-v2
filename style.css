@@ -95,8 +95,9 @@ section:nth-child(even) { background-color: var(--light-grey); }
 .logo-name {
     font-family: var(--font-heading); font-size: 1.5rem;
     font-weight: 700; color: var(--primary-blue); line-height: 1;
-}
 .logo-tagline { font-size: 0.8rem; color: var(--dark-grey); display: block; }
+}
+
 
 .nav-list { display: flex; list-style: none; gap: 25px; }
 .nav-link {
@@ -690,3 +691,4 @@ input:read-only { background-color: #e9ecef; cursor: not-allowed; }
   }
 }
 }
+
