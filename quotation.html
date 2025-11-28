@@ -5,20 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request Quote | HMV World</title>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data:; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; connect-src 'self' https://api.emailjs.com https://ipapi.co;">
-    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
- <div id="app-header"></div>
 
-    <div class="page-hero">...</div>
- 
-
-
-	
-	
+    <div id="app-header"></div>
 
     <div class="page-hero">
         <img src="assets/pages/Quotation.webp" alt="Request Quotation">
@@ -56,31 +49,31 @@
                         <label for="contact-number">Phone Number</label>
                         <div class="contact-inputs">
                             <select id="country-code" name="country_code">
-                                 	<option value="+91" selected>+91 (India)</option>
-									<option value="+1">+1 (USA/Canada)</option>
-									<option value="+44">+44 (UK)</option>
-									<option value="+971">+971 (UAE)</option>
-									<option value="+61">+61 (Australia)</option>
-									<option value="+49">+49 (Germany)</option>
-									<option value="+81">+81 (Japan)</option>
-									<option value="+86">+86 (China)</option>
-									<option value="+33">+33 (France)</option>
-									<option value="+34">+34 (Spain)</option>
-									<option value="+7">+7 (Russia/Kazakhstan)</option>
-									<option value="+55">+55 (Brazil)</option>
-									<option value="+27">+27 (South Africa)</option>
-									<option value="+65">+65 (Singapore)</option>
-									<option value="+60">+60 (Malaysia)</option>
-									<option value="+966">+966 (Saudi Arabia)</option>
-									<option value="+974">+974 (Qatar)</option>
-									<option value="+965">+965 (Kuwait)</option>
-									<option value="+39">+39 (Italy)</option>
-									<option value="+52">+52 (Mexico)</option>
-									<option value="+90">+90 (Turkey)</option>
-									<option value="+41">+41 (Switzerland)</option>
-									<option value="+31">+31 (Netherlands)</option>
-									<option value="+46">+46 (Sweden)</option>
-									<option value="+353">+353 (Ireland)</option>
+                                <option value="+91" selected>+91 (India)</option>
+								<option value="+1">+1 (USA/Canada)</option>
+								<option value="+44">+44 (UK)</option>
+								<option value="+971">+971 (UAE)</option>
+								<option value="+61">+61 (Australia)</option>
+								<option value="+49">+49 (Germany)</option>
+								<option value="+81">+81 (Japan)</option>
+								<option value="+86">+86 (China)</option>
+								<option value="+33">+33 (France)</option>
+								<option value="+34">+34 (Spain)</option>
+								<option value="+7">+7 (Russia/Kazakhstan)</option>
+								<option value="+55">+55 (Brazil)</option>
+								<option value="+27">+27 (South Africa)</option>
+								<option value="+65">+65 (Singapore)</option>
+								<option value="+60">+60 (Malaysia)</option>
+								<option value="+966">+966 (Saudi Arabia)</option>
+								<option value="+974">+974 (Qatar)</option>
+								<option value="+965">+965 (Kuwait)</option>
+								<option value="+39">+39 (Italy)</option>
+								<option value="+52">+52 (Mexico)</option>
+								<option value="+90">+90 (Turkey)</option>
+								<option value="+41">+41 (Switzerland)</option>
+								<option value="+31">+31 (Netherlands)</option>
+								<option value="+46">+46 (Sweden)</option>
+								<option value="+353">+353 (Ireland)</option>
                             </select>
                             <input type="tel" id="contact-number" name="contact_number" required />
                         </div>
@@ -127,6 +120,11 @@
                         </div>
                     </div>
 
+                    <div class="form-group span-full form-terms">
+                        <input type="checkbox" id="terms-check" name="terms_accepted" required>
+                        <label for="terms-check">I accept the <a href="#" onclick="showTermsModal(); return false;">Terms and Conditions</a></label>
+                    </div>
+
                     <div class="form-button span-full">
                         <button type="submit" class="btn btn-primary" id="quotation-submit-btn">SEND REQUEST</button>
                     </div>
@@ -135,31 +133,30 @@
         </div>
     </section>
 
-<!-- SUCCESS POPUP -->
-<div id="popup-message" class="popup-overlay" style="display: none;">
-  <div class="popup-box">
-    <h3>Thank you for contacting us!</h3>
-    <p>We’ll get in touch with you soon.</p>
-    <a
-      href="https://wa.me/message/KXKB46U5RZKCI1"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-    </a>
-    <br />
-    <button id="close-popup">Close</button>
-  </div>
-</div>
+    <div id="popup-message" class="popup-overlay" style="display: none;">
+        <div class="popup-box">
+            <h3>Request Sent Successfully!</h3>
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
 
+    <div id="terms-modal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="modal-close" onclick="closeTermsModal()">&times;</span>
+            <h2 style="margin-bottom: 20px; color: var(--primary-blue);">Terms and Conditions</h2>
+            <div style="text-align: left; max-height: 400px; overflow-y: auto;">
+                <p><strong>1. Introduction</strong><br>By checking the acceptance box, you agree to these terms regarding the quotation request from HMV World.</p>
+                <p><strong>2. Pricing</strong><br>Prices provided in quotations are subject to market fluctuation and validity periods specified in the final invoice.</p>
+                <p><strong>3. Shipping</strong><br>Shipping terms (FOB, CIF, etc.) will be negotiated upon final order confirmation.</p>
+                <p><strong>4. Privacy</strong><br>Your data is used solely for the purpose of business communication and processing orders.</p>
+            </div>
+            <button class="btn btn-primary" style="margin-top: 20px;" onclick="closeTermsModal()">I Understand</button>
+        </div>
+    </div>
+
+    <div id="app-footer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.12.1/dist/email.min.js"></script>
-	
-	    <div id="app-footer"></div>
-
-    
     <script src="script.js"></script>
 </body>
-
 </html>
-
